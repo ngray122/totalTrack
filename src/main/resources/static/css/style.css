@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+	margin: 0 auto;
+	font-family: 'Poppins', sans-serif;
+	box-sizing: border-box;
+}
+
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.container {
+min-width: 100%;
+
+}
+
+body {
+	background-color: #dddddd;
+	margin-left: 30px;
+	margin-left: 35px;
+}
+
+.imgBk {
+	background-image: url("/images/high-angle-view-image-half-empty-working-desk.jpg");
+	min-height: 100%;
+}
+
+
+a, li{
+	text-decoration: none;
+	list-style: none;
+
+}
+
+.btn {
+	background-color: #7d5ba6;
+	border: none;
+	color: white;
+}
+
+.flex-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+/* **********   NavBar   ********** */
+.navbar-brand {
+	font-size: 2em;
+}
+
+.nav-item {
+	float: right;
+}
+
+
+/* #navHeader {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+} */
+
+
+
+/* **********   Side Panel With all Folders   ***********/
+#folderSidePanel {
+	border-radius: 30px;
+	padding:10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #fc6471;
+	flex:3;
+	color: white;
+	margin-right: 20px;
+	height: 85vh;
+	flex-wrap: nowrap;
+
+}
+
+/* flex needed */
+#folderListItem {
+	margin: 20px;
+	font-size: 1.25em;
+
+	}
+
+.folderSidePanelFolderList {
+	text-decoration: underline;
+}
+
+	/* **********    Table of all items  ********** */
+#allProductsDashboard {
+	margin-right: 30px;
+	padding: 30px;
+	flex:10;
+	background-color: #9DFBD2; 
+	/* background-color: #acfcd9; */
+	border-radius: 30px;
+	color: black;
+	/* color: white; */
+
+}
+
+
+/* **********   Side Panel With all Folders   ***********/
+#folderSidePanel_2 {
+	border-radius: 30px;
+	padding:10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #fc6471;
+	flex:3;
+	color: white;
+	margin-right: 20px;
+	height: 85vh;
+	flex-wrap: nowrap;
+
+}
+
+
+#productForms {
+	flex:9;
+	padding: 30px;
+	background-color: #9DFBD2;
+	border-radius: 30px;
+	height: 100%;
+	margin-right: 20px;
+
+}
+
+
+.landingBackground {
+	background-image: url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fdark-black-and-blue-grungy-wall-background-for-display-or-montage-of-picture-id1150477705%3Fk%3D20%26m%3D1150477705%26s%3D612x612%26w%3D0%26h%3DYrqw1w6bEJ40kZFTSovkLtu4VE52zLgl-n6AE1t2BuM%3D&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fbackground&tbnid=1QHa_rJiDLawKM&vet=12ahUKEwjut-H5_qj2AhXVqXIEHblsAiUQMygNegUIARD9AQ..i&docid=A5mbTISWKKI14M&w=612&h=408&q=background%20image&ved=2ahUKEwjut-H5_qj2AhXVqXIEHblsAiUQMygNegUIARD9AQ");
+	width: 100%;
+	height: 100%;
+}
+
+
+#itemCardInfo {
+	border-radius: 30px;
+	height: 100%;
+
+}
+
+
+#detailFolderHeader {
+	color: #7d5ba6;;
+}
+
