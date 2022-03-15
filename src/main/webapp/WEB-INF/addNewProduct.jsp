@@ -8,114 +8,111 @@
             <head>
                 <meta charset="UTF-8">
                 <title>Add New Product</title>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-                    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-                    crossorigin="anonymous">
                 <link rel="stylesheet" href="/css/style.css">
-                <script src="https://kit.fontawesome.com/bbdeaf9601.js" crossorigin="anonymous"></script>
+                <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
             </head>
 
             <body>
-                <div class="container flex">
+                <!-- NAV BAR -->
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="/dashboard" class="brand-logo">Tally</a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a id="navBtn" href="/dashboard" class="waves-effect waves-light btn">Dashboard</a>
+                            </li>
+                            <li><a id="navBtn" href="/logout" class="waves-effect waves-light btn">Logout</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container">
                     <div class="row">
-                        <!-- ************     NAVBAR    ************** -->
-
-                        <nav class="navbar navbar-expand-lg navbar-light" id="navBar">
-                            <a class="navbar-brand" href="/dashboard">APPLICATION NAME</a>
-                            <div class="collapse navbar-collapse" id="">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="btn m-3" href="/dashboard">My
-                                            Dashboard</a>
-                                    </li>
-                                    <li>
-                                        <a class="btn m-3" href="/logout">Logout</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </nav>
-
 
                         <!-- ********* LEFT SIDEBAR COLUMNS ************ -->
-                        <div class="col" id="folderSidePanel">
-                            <ul class="">
+                        <div class="col s2 z-depth-3" id="folderSidePanel">
+                            <ul class="inline-icon">
                                 <c:forEach items='${ listOfAllCategories }' var='category'>
                                     <li id="folderListItem">
-                                        <i class="fa-regular fa-folder">
-                                            <a class="text-white" href="/category/detail/${category.id}">${category.categoryName}</a>
-                                        </i>
-                                        <a class="m-4 text-white" href="/category/delete/${category.id}">
+                                        <i id="materialIcon" class="inline-icon material-icons">folder</i>
+                                        <a id="folderLink"
+                                            href="/category/detail/${category.id}">${category.categoryName}</a>
+                                        <!-- <a class="m-4 text-white" href="/category/delete/${category.id}">
                                             <i class="fa-regular fa-trash-can"></i>
-                                        </a>
+                                        </a> -->
                                     </li>
                                 </c:forEach>
-
                             </ul>
+                            <!-- CREATE FOLDER -->
+                            <div class="container">
+                                <form:form action="/category/create" method="post" modelAttribute="categoryForm">
+                                    <form:input type="hidden" path="products" value="${id}" />
+                                    <div class="input-field">
+                                        <form:label path="categoryName">Add Folder:</form:label>
+                                        <form:errors path="categoryName" class="text-danger" />
+                                        <form:input path="categoryName" />
+                                    </div>
+                                    <input type="submit" value="Submit" class="btn mt-3" id="navBtn" />
+                                </form:form>
+                            </div>
+                        </div>
 
-                            <form:form action="/category/create" method="post" modelAttribute="categoryForm">
-                                <form:input type="hidden" path="products" value="${id}" />
-                                <div>
-                                    <form:label path="categoryName">Add Folder:</form:label>
-                                    <form:errors path="categoryName" class="text-danger" />
-                                    <form:input path="categoryName" class="form-control" />
-                                </div>
+                        <div class="col s1"></div>
 
+                        <!-- ********* Add Form ************ -->
+                        <div class="col s9 z-depth-3" id="productForms">
+                            <div class="container">
+                                <form:form action="/product/create" method="post" modelAttribute="newProduct">
+                                    <form:input type="hidden" path="user" value="${id}" />
 
-                                <input type="submit" value="Submit" class="btn mt-3" />
-                            </form:form>
+                                    <h4>Add Item</h4>
 
+                                    <div class="input-field">
+                                        <form:label path="productName">Name:</form:label>
+                                        <form:errors path="productName" class="text-danger" />
+                                        <form:input path="productName" class="validate" />
+                                    </div>
+                                    <div class="input-field">
+                                        <form:label path="productDescription">Description:</form:label>
+                                        <form:errors path="productDescription" class="text-danger" />
+                                        <form:textarea path="productDescription" class="validate materialize-textarea"/>
+                                    </div>
+                                    <div class="input-field">
+                                        <form:label path="productRetailPrice">Retail Price:</form:label>
+                                        <form:errors path="productRetailPrice" class="text-danger" />
+                                        <form:input path="productRetailPrice" class="validate" type="number"
+                                            step="0.01" />
+                                    </div>
+                                    <div class="input-field">
+                                        <form:label path="productCostPrice">Cost Price:</form:label>
+                                        <form:errors path="productCostPrice" class="text-danger" />
+                                        <form:input path="productCostPrice" class="validate" type="number"
+                                            step="0.01" />
+                                    </div>
+                                    <div class="input-field">
+                                        <form:label path="productQuantity">Quantity:</form:label>
+                                        <form:errors path="productQuantity" class="text-danger" />
+                                        <form:input path="productQuantity" class="validate" type="number" />
+                                    </div>
+                                    <div class="input-field">
+                                        <form:label path="productImage">Image:</form:label>
+                                        <form:errors path="productImage" class="text-danger" />
+                                        <form:input path="productImage" class="validate" />
+                                    </div>
+
+                                    <input type="submit" value="Submit" class="btn mt-3" id="navBtn" />
+                                </form:form>
+
+                            </div>
 
 
 
 
                         </div>
-                             <!-- ********* Add Form ************ -->
-                        <div class="col" id="productForms">
-
-                            <form:form action="/product/create" method="post" modelAttribute="newProduct">
-                                <form:input type="hidden" path="user" value="${id}" />
-
-                                <h4>Add Item</h4>
-
-                                <div>
-                                    <form:label path="productName">Name:</form:label>
-                                    <form:errors path="productName" class="text-danger" />
-                                    <form:input path="productName" class="form-control" />
-                                </div>
-                                <div>
-                                    <form:label path="productDescription">Description:</form:label>
-                                    <form:errors path="productDescription" class="text-danger" />
-                                    <form:textarea path="productDescription" class="form-control" />
-                                </div>
-                                <div>
-                                    <form:label path="productRetailPrice">Retail Price:</form:label>
-                                    <form:errors path="productRetailPrice" class="text-danger" />
-                                    <form:input path="productRetailPrice" class="form-control" type="number"
-                                        step="0.01" />
-                                </div>
-                                <div>
-                                    <form:label path="productCostPrice">Cost Price:</form:label>
-                                    <form:errors path="productCostPrice" class="text-danger" />
-                                    <form:input path="productCostPrice" class="form-control" type="number"
-                                        step="0.01" />
-                                </div>
-                                <div>
-                                    <form:label path="productQuantity">Quantity:</form:label>
-                                    <form:errors path="productQuantity" class="text-danger" />
-                                    <form:input path="productQuantity" class="form-control" type="number" />
-                                </div>
-                                <div>
-                                    <form:label path="productImage">Image:</form:label>
-                                    <form:errors path="productImage" class="text-danger" />
-                                    <form:input path="productImage" class="form-control" />
-                                </div>
-
-                                <input type="submit" value="Submit" class="btn btn-dark mt-3" />
-                            </form:form>
-
-
-                        </div>
+                        <script
+                            src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
             </body>
 

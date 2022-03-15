@@ -2,37 +2,30 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
-    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/style.css">
+<title>Registration</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="container flex">
+ <!-- NAVBAR -->
+ <nav>
+    <div class="nav-wrapper">
+      <a href="/dashboard" class="brand-logo">Tally</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/user/login" class="waves-effect waves-light btn">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <div class="container ">
         <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light">
-  
-                <a class="navbar-brand" href="/">APPLICATION NAME</a>
-                
-                <div class="collapse navbar-collapse" id="">
-                  <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/user/login">Login</a>
-                    </li>
-                  
-                  </ul>
-                 
-                </div>
-           
-            </nav>
-        <div class="col"></div>
-        <div class="col">
+        <div class="col s4"></div>
+        <div class="col s4">
 
             <h4>Register</h4>
             <form:form action="/register" method="post" modelAttribute="newUser">
@@ -66,10 +59,11 @@
             </form:form>
 
         </div>
-        <div class="col"></div>
+        <div class="col s4"></div>
     </div>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </body>
 </html>

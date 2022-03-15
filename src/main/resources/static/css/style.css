@@ -6,7 +6,6 @@
 * {
 	margin: 0 auto;
 	font-family: 'Poppins', sans-serif;
-	box-sizing: border-box;
 }
 
 
@@ -17,27 +16,15 @@
     gap: 20px;
 }
 
-.container {
-min-width: 100%;
-
-}
 
 body {
 	background-color: #dddddd;
-	margin-left: 30px;
-	margin-left: 35px;
-}
-
-.imgBk {
-	background-image: url("/images/high-angle-view-image-half-empty-working-desk.jpg");
-	min-height: 100%;
 }
 
 
 a, li{
 	text-decoration: none;
 	list-style: none;
-
 }
 
 .btn {
@@ -46,54 +33,53 @@ a, li{
 	color: white;
 }
 
-.flex-container {
+/* .flex-container {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
 	align-items: center;
-}
-
-/* **********   NavBar   ********** */
-.navbar-brand {
-	font-size: 2em;
-}
-
-.nav-item {
-	float: right;
-}
-
-
-/* #navHeader {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
 } */
 
+/* **********   NavBar   ********** */
+nav {
+	margin-bottom: 40px;
+}
 
 
 /* **********   Side Panel With all Folders   ***********/
 #folderSidePanel {
 	border-radius: 30px;
-	padding:10px;
+	min-height: 800px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	background-color: #fc6471;
-	flex:3;
+	background-color: #ee6e73;
 	color: white;
-	margin-right: 20px;
-	height: 85vh;
-	flex-wrap: nowrap;
+	margin-bottom: 40px;
+}
+
+.inline-icon {
+	vertical-align: bottom;
+	font-size: 1.15em !important;
+	color:#7d5ba6;
+
+ }
+
+#navBtn {
+	background-color: #7d5ba6;
 
 }
 
-/* flex needed */
-#folderListItem {
-	margin: 20px;
-	font-size: 1.25em;
+#folderLink {
+	color: white;
+}
 
-	}
+/* flex needed */
+/* #folderListItem {
+	margin: 10px;
+	font-size: 1.5em;
+} */
 
 .folderSidePanelFolderList {
 	text-decoration: underline;
@@ -101,9 +87,7 @@ a, li{
 
 	/* **********    Table of all items  ********** */
 #allProductsDashboard {
-	margin-right: 30px;
-	padding: 30px;
-	flex:10;
+	min-height: 800px;
 	background-color: #9DFBD2; 
 	/* background-color: #acfcd9; */
 	border-radius: 30px;
@@ -116,29 +100,21 @@ a, li{
 /* **********   Side Panel With all Folders   ***********/
 #folderSidePanel_2 {
 	border-radius: 30px;
-	padding:10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	background-color: #fc6471;
-	flex:3;
+	background-color: #ee6e73;
 	color: white;
-	margin-right: 20px;
-	height: 85vh;
-	flex-wrap: nowrap;
-
+	min-height: 800px;
 }
 
 
 #productForms {
-	flex:9;
-	padding: 30px;
+	
 	background-color: #9DFBD2;
 	border-radius: 30px;
-	height: 100%;
-	margin-right: 20px;
-
+	min-height: 800px;
 }
 
 
